@@ -1,11 +1,12 @@
-# Towards Quantitative Evaluation of Explainable AI Methods for Deepfake Detection
+# Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples
 
-## PyTorch Implementation [[Paper](https://arxiv.org/pdf/2404.18649)] [[DOI](https://doi.org/10.1145/3643491.3660292)] [[Cite](#citation)]
+## PyTorch Implementation [[Paper](https://TBA)] [[DOI](https://TBA)] [[Cite](#citation)]
 <div align="justify">
-
-- From **"Towards Quantitative Evaluation of Explainable AI Methods for Deepfake Detection"**, Proc. ACM Int. Workshop on Multimedia AI against Disinformation (MAD’24) at the ACM Int. Conf. on Multimedia Retrieval (ICMR’24), Thailand, June 2024.
-- Written by Konstantinos Tsigos, Evlampios Apostolidis, Spyridon Baxevanakis, Symeon Papadopoulos and Vasileios Mezaris.
-- This software can be used to evaluate the performance of five explanation approaches from the literature (GradCAM++, RISE, SHAP, LIME, SOBOL), on explaining the output of a state-of-the-art model (based on Efficient-Net) for deepfake detection. Our evaluation framework assesses the ability of an explanation method to spot the regions of a fake image with the biggest influence on the decision of the deepfake detector, by examining the extent to which these regions can be modified through a set of adversarial attacks, in order to flip the detector's prediction or reduce its initial prediction.
+<!---
+- From **"Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples"**, Proc. ACM Int. Workshop on Multimedia AI against Disinformation (MAD’24) at the ACM Int. Conf. on Multimedia Retrieval (ICMR’24), Thailand, June 2024.--->
+- From **"Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples"**, TBA <br />
+- Written by Konstantinos Tsigos, Evlampios Apostolidis and Vasileios Mezaris. <br />
+- This software can be used to evaluate the performance of four explanation approaches from the literature (LIME, SHAP, SOBOL, RISE), on explaining the output of a state-of-the-art model (based on Efficient-Net) for deepfake detection. We modified each explanation method in order to use an adversarially attacked counterpart of the selected image as a mask to create the perturbations. Our evaluation framework then assesses the ability of an explanation method to spot the regions of a fake image with the biggest influence on the decision of the deepfake detector, by examining the extent to which these regions can be modified through a set of adversarial attacks, in order to flip the detector's prediction or reduce its initial prediction.
 </div>
 
 ## Dependencies
@@ -61,9 +62,9 @@ The employed model (called ff_attribution) was trained for multiclass classifica
 
 To evaluate the explanation method(s) using our framework, run the [`evaluate.py`](explanation/evaluate.py) script.
 
-To evaluate the explanation method(s) using both our framework and the one from [Gowrisankar et al. (2024)](https://arxiv.org/abs/2312.06627) (which was used as the basis for developing our framework), and compare the results (as we did in Tables 3 and 4 of our paper), run the [`evaluate_pipelines_comparison.py`](explanation/evaluate_pipelines_comparison.py) script.
-
 To visualize the created explanation by an explanation method, for a specific image of the dataset, run the [`visualize.py`](explanation/visualize.py) script.
+
+To compare the runtime and the number of inferences of our modified explanation methods with their original implementations, run the [`efficiency.py`](explanation/efficiency.py) script.
 
 ## Running parameters and evaluation results
 <div align="justify">
@@ -71,9 +72,10 @@ The default parameters and the available options for running the above scripts, 
 
 |Parameter name | File | Description | Default Value | Options
 | :--- | :--- | :--- | :---: | :---:
-`evaluation_explanation_methods`|[`evaluate.py`](explanation/evaluate.py#L18:L19) [`evaluate_pipelines_comparison.py`](explanation/evaluate_pipelines_comparison.py#L19:L20)| Explanation method(s) to evaluate | 'All' | 'All', 'GradCAM++', 'RISE', 'SHAP', 'LIME', 'SOBOL'
-`explanation_method`|[`visualize.py`](explanation/visualize.py#L19:L20)| Explanation method to explain the image. | 'LIME' | 'GradCAM++', 'RISE', 'SHAP', 'LIME', 'SOBOL'
-`dataset_example_index`|[`visualize.py`](explanation/visualize.py#L21:L22)| Index of the image in the database | 'random' | 'random', integer between [0,13837]
+`evaluation_explanation_method`|[`evaluate.py`](explanation/evaluate.py#L18:L19) | Explanation method(s) to evaluate | 'All' | 'All', 'LIME', 'LIME_adv', 'SHAP', 'SHAP_adv', 'SOBOL', 'SOBOL_adv', 'RISE', 'RISE_adv'
+`explanation_method`|[`visualize.py`](explanation/visualize.py#L20:L21)| Explanation method to explain the image | 'LIME' | 'LIME', 'SHAP', 'SOBOL', 'RISE'
+`adversarial_mask`|[`visualize.py`](explanation/visualize.py#L22:L23)| Use the adversarial counterpart of the selected image as a mask to create the pertubations of the explanation method | 'Both' | 'Yes', 'No', 'Both'
+`dataset_example_index`|[`visualize.py`](explanation/visualize.py#L24:L25)| Index of the image in the database | 'random' | 'random', integer between [0,13837]
 
 The evaluation results are printed onto the console and saved into a CSV file which is stored within the `results` folder, created at the [explanation](/explanation) path. To eliminate the need to run the evaluation process from the beginning in case of an unexpected error, the evaluation results for each test image are accumulated into an NPY file, that is used as a checkpoint and is also located at the `results` folder.
 
@@ -82,7 +84,9 @@ The evaluation results are printed onto the console and saved into a CSV file wh
     
 If you find our work, code or pretrained models, useful in your work, please cite the following publication:
 
-K. Tsigos, E. Apostolidis, S. Baxevanakis, S. Papadopoulos, V. Mezaris, "<b>Towards Quantitative Evaluation of Explainable AI Methods for Deepfake Detection</b>", Proc. ACM Int. Workshop on Multimedia AI against Disinformation (MAD’24) at the ACM Int. Conf. on Multimedia Retrieval (ICMR’24), Thailand, June 2024.
+TBA
+
+<!---K. Tsigos, E. Apostolidis, S. Baxevanakis, S. Papadopoulos, V. Mezaris, "<b>Towards Quantitative Evaluation of Explainable AI Methods for Deepfake Detection</b>", Proc. ACM Int. Workshop on Multimedia AI against Disinformation (MAD’24) at the ACM Int. Conf. on Multimedia Retrieval (ICMR’24), Thailand, June 2024.
 </div>
 
 The accepted version of this paper is available on ArXiv at: https://arxiv.org/abs/2404.18649
@@ -100,7 +104,7 @@ BibTeX:
     location  = {Phuket, Thailand},
     series    = {MAD '24}
 }
-```
+```--->
 
 ## License
 <div align="justify">
