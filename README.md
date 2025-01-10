@@ -1,13 +1,9 @@
 # Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples
 
 ## PyTorch Implementation [[Paper](https://TBA)] [[DOI](https://TBA)] [[Cite](#citation)]
-<div align="justify">
-<!---
-- From **"Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples"**, Proc. ACM Int. Workshop on Multimedia AI against Disinformation (MAD’24) at the ACM Int. Conf. on Multimedia Retrieval (ICMR’24), Thailand, June 2024.--->
-- From **"Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples"**, TBA <br />
+- From **"Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples"**, Proc. IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW 2025) <br />
 - Written by Konstantinos Tsigos, Evlampios Apostolidis and Vasileios Mezaris. <br />
-- This software can be used to evaluate the performance of four explanation approaches from the literature (LIME, SHAP, SOBOL, RISE), on explaining the output of a state-of-the-art model (based on Efficient-Net) for deepfake detection. We modified each explanation method in order to use an adversarially attacked counterpart of the selected image as a mask to create the perturbations. Our evaluation framework then assesses the ability of an explanation method to spot the regions of a fake image with the biggest influence on the decision of the deepfake detector, by examining the extent to which these regions can be modified through a set of adversarial attacks, in order to flip the detector's prediction or reduce its initial prediction.
-</div>
+- This software can be used to evaluate and compare the performance of four perturbation-based explanation methods from the literature (LIME, SHAP, SOBOL, RISE) on explaining the output of a state-of-the-art model for deepfake detection, with the performance of modified versions of them, that use adversarially-generated samples of the input image to form perturbation masks and infer the importance of different input features. The employed evaluation framework assesses the performance of an explanation method by examining the extent to which the image regions that were found as the most important ones, can be used to flip the deepfake detector's decision through a series of adversarial attacks.
 
 ## Dependencies
 The code was developed, checked and verified on an `Ubuntu 20.04.6` PC with an `NVIDIA RTX 4090` GPU and an `i5-12600K` CPU. All dependencies can be found inside the [environment.yml](/environment.yml) file, which can be used to set up the necessary [conda](https://docs.conda.io/en/latest/) enviroment.
@@ -84,27 +80,23 @@ The evaluation results are printed onto the console and saved into a CSV file wh
     
 If you find our work, code or pretrained models, useful in your work, please cite the following publication:
 
-TBA
-
-<!---K. Tsigos, E. Apostolidis, S. Baxevanakis, S. Papadopoulos, V. Mezaris, "<b>Towards Quantitative Evaluation of Explainable AI Methods for Deepfake Detection</b>", Proc. ACM Int. Workshop on Multimedia AI against Disinformation (MAD’24) at the ACM Int. Conf. on Multimedia Retrieval (ICMR’24), Thailand, June 2024.
+K. Tsigos, E. Apostolidis, V. Mezaris, "<b>Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples</b>", Proc. IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW 2025), Feb.-Mar. 2025, Tucson, Arizona, US.
 </div>
-
-The accepted version of this paper is available on ArXiv at: https://arxiv.org/abs/2404.18649
 
 BibTeX:
 
 ```
-@INPROCEEDINGS{Tsigos2024,
-    author    = {Tsigos, Konstantinos, and Apostolidis, Evlampios and Baxevanakis, Spyridon and Papadopoulos, Symeon and Mezaris, Vasileios},
-    title     = {Towards Quantitative Evaluation of Explainable AI Methods for Deepfake Detection},
-    year      = {2024},
-    publisher = {Association for Computing Machinery},
-    address   = {New York, NY, USA},
-    booktitle = {Proceedings of the 3rd ACM International Workshop on Multimedia AI against Disinformation},
-    location  = {Phuket, Thailand},
-    series    = {MAD '24}
+@INPROCEEDINGS{AI4MFDD_2025,
+  author={Tsigos, Konstantinos and Apostolidis, Evlampios and Mezaris, Vasileios},
+  booktitle={2025 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW)}, 
+  title={Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={x-x},
+  doi={xxx}
 }
-```--->
+```
 
 ## License
 <div align="justify">
@@ -117,4 +109,4 @@ This software is provided by the authors "as is" and any express or implied warr
 </div>
 
 ## Acknowledgement
-<div align="justify"> This work was supported by the EU Horizon Europe and Horizon 2020 programmes under grant agreements 101070190 AI4TRUST and 951911 AI4Media, respectively. </div>
+<div align="justify"> This work was supported by the EU Horizon Europe program under grant agreement 101070190 AI4TRUST. </div>
