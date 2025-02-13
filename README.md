@@ -1,6 +1,6 @@
 # Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples
 
-## PyTorch Implementation [[Paper](https://TBA)] [[DOI](https://TBA)] [[Cite](#citation)]
+## PyTorch Implementation [[Paper](http://arxiv.org/abs/2502.03957)] [[DOI](https://TBA)] [[Cite](#citation)]
 - From **"Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples"**, Proc. IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW 2025) <br />
 - Written by Konstantinos Tsigos, Evlampios Apostolidis and Vasileios Mezaris. <br />
 - This software can be used to re-implement modified versions of four perturbation-based explanation methods from the literature (LIME, SHAP, SOBOL, RISE) for explaining the output of a state-of-the-art model for deepfake detection, that rely on the use of adversarially-generated samples of the input deepfake image to form perturbation masks and infer the importance of different input features. Moreover, it can be used for evaluating the performance of these modified versions and for comparing it with the performance of their original counterparts, based on an [evaluation framework](https://github.com/IDT-ITI/XAI-Deepfakes) that assesses the performance of an explanation method by examining the extent to which the image regions that were found as the most important ones, can be used to flip the deepfake detector's decision through a series of adversarial attacks.
@@ -82,6 +82,8 @@ If you find our work, code or pretrained models, useful in your work, please cit
 
 K. Tsigos, E. Apostolidis, V. Mezaris, "<b>Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples</b>", Proc. IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW 2025), Feb.-Mar. 2025, Tucson, Arizona, US.
 </div>
+
+A pre-print of this paper is available at: http://arxiv.org/abs/2502.03957
 
 BibTeX:
 
