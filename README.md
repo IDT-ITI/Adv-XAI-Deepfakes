@@ -88,15 +88,13 @@ A pre-print of this paper is available at: http://arxiv.org/abs/2502.03957
 BibTeX:
 
 ```
-@INPROCEEDINGS{AI4MFDD_2025,
-  author={Tsigos, Konstantinos and Apostolidis, Evlampios and Mezaris, Vasileios},
-  booktitle={2025 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW)}, 
-  title={Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples}, 
-  year={2025},
-  volume={},
-  number={},
-  pages={x-x},
-  doi={xxx}
+@InProceedings{Tsigos_2025_WACV,
+    author    = {Tsigos, Konstantinos and Apostolidis, Evlampios and Mezaris, Vasileios},
+    title     = {Improving the Perturbation-Based Explanation of Deepfake Detectors Through the Use of Adversarially-Generated Samples},
+    booktitle = {Proceedings of the Winter Conference on Applications of Computer Vision (WACV) Workshops},
+    month     = {February},
+    year      = {2025},
+    pages     = {706-715}
 }
 ```
 
